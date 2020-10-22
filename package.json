@@ -1,0 +1,57 @@
+{
+  "name": "alexa-get-routine-ids-bookmarklets",
+  "version": "1.0.0",
+  "description": "Browser bookmarklets for easily searching automationId values for routines from the Amazon Alexa API",
+  "keywords": [
+    "alexa",
+    "amazon",
+    "echo",
+    "routine",
+    "automation",
+    "ID",
+    "IDs",
+    "bookmarklet",
+    "utility",
+    "tool"
+  ],
+  "homepage": "https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets",
+  "bugs": {
+    "url": "https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets.git"
+  },
+  "license": "MPL-2.0",
+  "author": "Jamie Lievesley <jamie@jamiegl.co.uk> (https://jamiegl.co.uk)",
+  "source": "src/build.ts",
+  "browser": "README.md",
+  "scripts": {
+    "build": "run-s build:us build:uk build:readme",
+    "build:env": "parcel build bookmarklet.ts --out-dir .build --target browser  --no-source-maps",
+    "build:readme": "npx ts-node build.ts",
+    "build:uk": "cross-env URL=\"https://alexa.amazon.co.uk/api/behaviors/automations?limit=2000\" npm run build:env -- --out-file bookmarklet.uk.js",
+    "build:us": "cross-env URL=\"https://alexa.amazon.com/api/behaviors/automations?limit=2000\" npm run build:env -- --out-file bookmarklet.us.js",
+    "clean": "run-p clean:build clean:cache",
+    "clean:build": "rimraf .build/**",
+    "clean:cache": "rimraf .cache/**",
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s lint:fix build"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.2",
+    "cross-env": "^7.0.2",
+    "husky": "^4.3.0",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.2",
+    "prettier-plugin-packagejson": "^2.2.6",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.3"
+  }
+}
