@@ -10,39 +10,48 @@
     <link rel="stylesheet" href="https://unpkg.com/mvp.css" type="text/css" />
   </head>
   <body>
-    <h1>{{TITLE}}</h1>
+    <header>
+      <h1>{{TITLE}}</h1>
 
-    <p>
-      Browser bookmarklets for easily searching <code>automationId</code> values for
-      <b>routines</b> from the Amazon Alexa API
-    </p>
+      <p>
+        Browser bookmarklets for easily searching <code>automationId</code> values for
+        <b>routines</b> from the Amazon Alexa API.
+      </p>
+    </header>
 
-    <h2>Bookmarklets</h2>
+    <main>
+      <article>
+        <h2>Bookmarklets</h2>
 
-    <p>
-      <b>DO NOT LEFT CLICK THESE LINKS...</b> <br />
-      <b>Right click</b> either link and choose <b>Bookmark this Link</b>:
-    </p>
+        <p>
+          <b>DO NOT LEFT CLICK THESE LINKS...</b> <br />
+          <b>Right click</b> either link and choose <b>Bookmark this Link:</b>
+        </p>
 
-    <ul>
-      <li><a href="{{URI_UK}}" id="bookmarklet-uk">Amazon UK (.co.uk)</a></li>
-      <li><a href="{{URI_US}}" id="bookmarklet-us">Amazon US (.com)</a></li>
-    </ul>
+        <ul>
+          <li><a href="{{URI_US}}" id="bookmarklet-us">Amazon US (.com)</a></li>
+          <li><a href="{{URI_UK}}" id="bookmarklet-uk">Amazon UK (.co.uk)</a></li>
+        </ul>
 
-    <p>
-      Then open the bookmark.<br />
-      You may need to login to Alexa first. <br />
-      If the bookmarklet asks you to run it again, do so.
-    </p>
+        <aside>
+          <p>
+            Then open the bookmark.<br />
+            You may need to login to Alexa first. <br />
+            If the bookmarklet asks you to run it again, do so.
+          </p>
+        </aside>
+      </article>
+    </main>
 
-    <hr />
-
-    <p><a href="https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets">View source</a></p>
+    <footer>
+      <hr />
+      <a href="https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets">View source</a>
+    </footer>
 
     <script defer async>
       function preventLink(event) {
         event.preventDefault();
-        alert('Right click this link and choose "Bookmark this Link"');
+        alert('OOPS: You need to right click the link and choose "Bookmark this Link"');
       }
       document.getElementById("bookmarklet-uk").addEventListener("click", preventLink);
       document.getElementById("bookmarklet-us").addEventListener("click", preventLink);
