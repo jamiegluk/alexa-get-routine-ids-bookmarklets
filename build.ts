@@ -8,9 +8,9 @@ const prefix = "javascript:";
 const usURI = prefix + encodeURIComponent(usText);
 const ukURI = prefix + encodeURIComponent(ukText);
 
-let readmeText = readFileSync("template.md").toString();
+let pageText = readFileSync("template.html").toString();
 
-readmeText = readmeText.replace("{{URL_US}}", usURI);
-readmeText = readmeText.replace("{{URL_UK}}", ukURI);
+pageText = pageText.replace("{{URI_US}}", usURI);
+pageText = pageText.replace("{{URI_UK}}", ukURI);
 
-writeFileSync("README.md", readmeText);
+writeFileSync(".build/index.html", pageText);
