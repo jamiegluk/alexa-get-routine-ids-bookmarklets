@@ -35,7 +35,7 @@
     "clean": "run-p clean:build clean:cache",
     "clean:build": "rimraf .build/**",
     "clean:cache": "rimraf .cache/**",
-    "deploy": "gh-pages -s .build/index.html",
+    "deploy": "gh-pages -d .build -s index.html",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write ."
   },
