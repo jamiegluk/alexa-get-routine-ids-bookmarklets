@@ -27,6 +27,10 @@
       #bookmarklet-uk::before {
         content: "Amazon UK (.co.uk)";
       }
+      body:not(.using-firefox) .firefox,
+      body.using-firefox .not-firefox {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -45,7 +49,16 @@
 
         <p>
           <b>DO NOT LEFT CLICK THESE LINKS...</b> <br />
-          <b>Right click</b> either link and choose <b>Bookmark this Link:</b>
+
+          <span class="not-firefox">
+            Ensure your bookmarks bar is open (<kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>)
+            <br />
+            <b>Click and drag</b> either link to your <b>bookmarks bar</b>:
+          </span>
+
+          <span class="firefox">
+            <b>Right click</b> either link and choose <b>Bookmark This <u>L</u>ink</b>:
+          </span>
         </p>
 
         <ul>
@@ -75,10 +88,14 @@
     <script defer async>
       function preventLink(event) {
         event.preventDefault();
-        alert('OOPS: You need to right click the link and choose "Bookmark this Link"');
+        alert("OOPS: Don't left-click the link; read instructions");
       }
       document.getElementById("bookmarklet-uk").addEventListener("click", preventLink);
       document.getElementById("bookmarklet-us").addEventListener("click", preventLink);
+
+      if (navigator.userAgent.toLowerCase().indexOf("firefox") !== -1) {
+        document.body.className += " using-firefox";
+      }
     </script>
   </body>
 </html>
