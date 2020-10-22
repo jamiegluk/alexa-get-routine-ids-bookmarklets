@@ -3,7 +3,7 @@
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/jamiegluk/alexa-get-routine-ids-bookmarklets?color=blue)](https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets/releases)
 [![GitHub lint Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/alexa-get-routine-ids-bookmarklets/Lint?label=lint)](https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets/actions?query=workflow%3A%22Lint%22)
 [![GitHub build Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/alexa-get-routine-ids-bookmarklets/Build?label=build)](https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets/actions?query=workflow%3A%22Build%22)
-[![GitHub publish Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/alexa-get-routine-ids-bookmarklets/Publish?label=publish)](https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets/actions?query=workflow%3A%22Publish%22)
+[![GitHub deploy Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/alexa-get-routine-ids-bookmarklets/Deploy?label=deploy)](https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets/actions?query=workflow%3A%22Deploy%22)
 
 Browser bookmarklets for easily searching `automationId` values for **routines** from the Amazon Alexa API
 
@@ -32,7 +32,7 @@ yarn install
 
 ```bash
 yarn build
-yarn publish
+yarn deploy
 ```
 
 ---
@@ -46,7 +46,7 @@ yarn publish
 | `yarn build:uk`    | Builds `bookmarklet.ts` using Amazon UK (.co.uk) URL to `/.build/bookmarklet.uk.js`                 |
 | `yarn build:env`   | Delegate for above 2, runs parcel                                                                   |
 | `yarn build:html`  | Takes JS files and injects as URIs into `template.html` content, outputting to `/.build/index.html` |
-| `yarn publish`     | Deploys GitHub pages from `/.build/index.html`                                                      |
+| `yarn deploy`      | Deploys GitHub pages from `/.build/index.html`                                                      |
 | `yarn lint`        | Run Prettier linter                                                                                 |
 | `yarn lint:fix`    | Run Prettier linter and fix issues                                                                  |
 |                    |

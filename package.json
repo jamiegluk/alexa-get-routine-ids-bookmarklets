@@ -35,9 +35,9 @@
     "clean": "run-p clean:build clean:cache",
     "clean:build": "rimraf .build/**",
     "clean:cache": "rimraf .cache/**",
+    "deploy": "gh-pages -s .build/index.html",
     "lint": "prettier --check .",
-    "lint:fix": "prettier --write .",
-    "publish": "gh-pages -s .build/index.html"
+    "lint:fix": "prettier --write ."
   },
   "husky": {
     "hooks": {
