@@ -7,15 +7,7 @@
     <meta name="keywords" content="{{KEYWORDS}}" />
     <meta name="version" content="{{VERSION}}" />
     <meta name="robots" content="index, follow" />
-    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/Core/Modernist" type="text/css" />
-    <script>
-      function preventLink(event) {
-        event.preventDefault();
-        alert('Right click this link and choose "Bookmark this Link"');
-      }
-      document.getElementById("bookmarklet-uk").addEventListener("click", preventLink);
-      document.getElementById("bookmarklet-us").addEventListener("click", preventLink);
-    </script>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" type="text/css" />
   </head>
   <body>
     <h1>{{TITLE}}</h1>
@@ -46,5 +38,14 @@
     <hr />
 
     <p><a href="https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets">View source</a></p>
+
+    <script defer async>
+      function preventLink(event) {
+        event.preventDefault();
+        alert('Right click this link and choose "Bookmark this Link"');
+      }
+      document.getElementById("bookmarklet-uk").addEventListener("click", preventLink);
+      document.getElementById("bookmarklet-us").addEventListener("click", preventLink);
+    </script>
   </body>
 </html>
