@@ -1,0 +1,29 @@
+# On release on main branch, uploads site, raw from 'www' dir, via FTP
+
+name: Deploy
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || (!github.event.release.prerelease && github.event.release.target_commitish == 'main') }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+      - name: Install
+        run: yarn install
+
+      - name: Lint (with fix)
+        run: yarn lint:fix
+      - name: Build
+        run: yarn build
+      - name: Deploy
+        run: yarn deploy
