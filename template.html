@@ -8,6 +8,26 @@
     <meta name="version" content="{{VERSION}}" />
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="https://unpkg.com/mvp.css" type="text/css" />
+    <style>
+      #bookmarklet-us,
+      #bookmarklet-uk {
+        visibility: hidden;
+        position: relative;
+      }
+      #bookmarklet-us::before,
+      #bookmarklet-uk::before {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #bookmarklet-us::before {
+        content: "Amazon US (.com)";
+      }
+      #bookmarklet-uk::before {
+        content: "Amazon UK (.co.uk)";
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -29,8 +49,12 @@
         </p>
 
         <ul>
-          <li><a href="{{URI_US}}" id="bookmarklet-us">Amazon US (.com)</a></li>
-          <li><a href="{{URI_UK}}" id="bookmarklet-uk">Amazon UK (.co.uk)</a></li>
+          <li>
+            <a href="{{URI_US}}" id="bookmarklet-us">Alexa Get Routine Ids</a>
+          </li>
+          <li>
+            <a href="{{URI_UK}}" id="bookmarklet-uk">Alexa Get Routine Ids (UK)</a>
+          </li>
         </ul>
 
         <aside>
