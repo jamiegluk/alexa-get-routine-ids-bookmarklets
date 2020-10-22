@@ -3,12 +3,14 @@
   "compilerOptions": {
     "outDir": ".build",
     "noEmit": true,
+    "lib": ["ES2020", "DOM"],
     "target": "ES2020",
     "module": "commonjs",
     "strict": true,
     "removeComments": true,
     "sourceMap": false,
     "allowJs": false,
-    "checkJs": false
+    "checkJs": false,
+    "resolveJsonModule": true
   }
 }

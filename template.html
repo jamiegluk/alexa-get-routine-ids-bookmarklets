@@ -1,10 +1,28 @@
-<html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{TITLE}}</title>
+    <meta name="author" content="{{AUTHOR}}" />
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta name="keywords" content="{{KEYWORDS}}" />
+    <meta name="version" content="{{VERSION}}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/Core/Modernist" type="text/css" />
+    <script>
+      function preventLink(event) {
+        event.preventDefault();
+        alert('Right click this link and choose "Bookmark this Link"');
+      }
+      document.getElementById("bookmarklet-uk").addEventListener("click", preventLink);
+      document.getElementById("bookmarklet-us").addEventListener("click", preventLink);
+    </script>
+  </head>
   <body>
-    <h1>Alexa Get-Routine-IDs Bookmarklets</h1>
+    <h1>{{TITLE}}</h1>
 
     <p>
-      Browser bookmarklets for easily searching <code>automationId</code> values
-      for <b>routines</b> from the Amazon Alexa API
+      Browser bookmarklets for easily searching <code>automationId</code> values for
+      <b>routines</b> from the Amazon Alexa API
     </p>
 
     <h2>Bookmarklets</h2>
@@ -15,8 +33,8 @@
     </p>
 
     <ul>
-      <li><a href="{{URI_UK}}">Amazon UK (.co.uk)</a></li>
-      <li><a href="{{URI_US}}">Amazon US (.com)</a></li>
+      <li><a href="{{URI_UK}}" id="bookmarklet-uk">Amazon UK (.co.uk)</a></li>
+      <li><a href="{{URI_US}}" id="bookmarklet-us">Amazon US (.com)</a></li>
     </ul>
 
     <p>
@@ -24,5 +42,9 @@
       You may need to login to Alexa first. <br />
       If the bookmarklet asks you to run it again, do so.
     </p>
+
+    <hr />
+
+    <p><a href="https://github.com/jamiegluk/alexa-get-routine-ids-bookmarklets">View source</a></p>
   </body>
 </html>

@@ -29,9 +29,7 @@ if (location.href !== url) {
   if (confirm("Filter by name?")) {
     const nameText = prompt("Name search text");
     if (nameText) {
-      results = results.filter((r) =>
-        r.name.toLowerCase().includes(nameText.toLowerCase())
-      );
+      results = results.filter((r) => r.name.toLowerCase().includes(nameText.toLowerCase()));
     }
   }
   if (confirm("Filter by utterance (trigger phrase)?")) {
