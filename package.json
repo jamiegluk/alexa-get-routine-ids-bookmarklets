@@ -1,6 +1,6 @@
 {
   "name": "alexa-get-routine-ids-bookmarklets",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Browser bookmarklets for easily searching automationId values for routines from the Amazon Alexa API",
   "keywords": [
     "alexa",
@@ -29,9 +29,9 @@
   "scripts": {
     "build": "run-s build:us build:uk build:html",
     "build:env": "parcel build bookmarklet.ts --out-dir .build --target browser  --no-source-maps",
-    "build:html": "npx ts-node build.ts",
-    "build:uk": "cross-env URL=\"https://alexa.amazon.co.uk/api/behaviors/automations?limit=2000\" npm run build:env -- --out-file bookmarklet.uk.js",
-    "build:us": "cross-env URL=\"https://alexa.amazon.com/api/behaviors/automations?limit=2000\" npm run build:env -- --out-file bookmarklet.us.js",
+    "build:html": "ts-node build.ts",
+    "build:uk": "cross-env TLD=co.uk ASSOC_HANDLE=amzn_dp_project_dee_uk npm run build:env -- --out-file bookmarklet.uk.js",
+    "build:us": "cross-env TLD=com ASSOC_HANDLE=amzn_dp_project_dee npm run build:env -- --out-file bookmarklet.us.js",
     "clean": "run-p clean:build clean:cache",
     "clean:build": "rimraf .build/**",
     "clean:cache": "rimraf .cache/**",
@@ -55,6 +55,7 @@
     "prettier": "^2.1.2",
     "prettier-plugin-packagejson": "^2.2.6",
     "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
   },
   "title": "Alexa Get-Routine-IDs Bookmarklets"
