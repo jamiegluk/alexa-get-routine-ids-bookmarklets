@@ -15,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v1
         with:
           node-version: "12"
@@ -25,5 +27,12 @@ jobs:
         run: yarn lint:fix
       - name: Build
         run: yarn build
+
+      - uses: oleksiyrudenko/gha-git-credentials@v1
+        with:
+          name: Jamie Gerrard Lievesley
+          email: jamie@jamiegl.co.uk
+          actor: JamieGerrardLievesley
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy
         run: yarn deploy
