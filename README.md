@@ -51,7 +51,7 @@ yarn deploy
 | `yarn lint:fix`    | Run Prettier linter and fix issues                                                                  |
 |                    |
 | `yarn clean`       | Runs all clean commands below                                                                       |
-| `yarn clean:dist`  | Removes _dist_ folder and its contents                                                              |
+| `yarn clean:build` | Removes _.build_ folder and its contents                                                            |
 | `yarn clean:cache` | Removes Parcel _.cache_ folder and its contents                                                     |
 
 ---
