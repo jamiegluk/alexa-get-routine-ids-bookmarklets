@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
@@ -5,7 +6,7 @@
     <meta name="author" content="Jamie Lievesley &lt;jamie@jamiegl.co.uk&gt; (https://jamiegl.co.uk)" />
     <meta name="description" content="Browser bookmarklets for easily searching automationId values for routines from the Amazon Alexa API" />
     <meta name="keywords" content="alexa amazon echo routine automation ID IDs bookmarklet utility tool" />
-    <meta name="version" content="1.1.2" />
+    <meta name="version" content="1.2.0" />
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="https://unpkg.com/mvp.css" type="text/css" />
     <style>
@@ -27,6 +28,8 @@
       #bookmarklet-uk::before {
         content: "Amazon UK (.co.uk)";
       }
+      body:not(.using-mac) .mac,
+      body.using-mac .not-mac,
       body:not(.using-firefox) .firefox,
       body.using-firefox .not-firefox,
       body:not(.using-mobile) .mobile {
@@ -56,7 +59,8 @@
           <b>DO NOT LEFT CLICK THESE LINKS...</b> <br />
 
           <span class="not-firefox">
-            Ensure your bookmarks bar is open (<kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>)
+            Ensure your bookmarks bar is open (<kbd class="not-mac">Control</kbd
+            ><kbd class="mac">⌘</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>)
             <br />
             <b>Click and drag</b> either link to your <b>bookmarks bar</b>:
           </span>
@@ -97,6 +101,10 @@
       }
       document.getElementById("bookmarklet-uk").addEventListener("click", preventLink);
       document.getElementById("bookmarklet-us").addEventListener("click", preventLink);
+
+      if (navigator.platform.toLowerCase().indexOf("mac") !== -1) {
+        document.body.className += " using-mac";
+      }
 
       if (navigator.userAgent.toLowerCase().indexOf("firefox") !== -1) {
         document.body.className += " using-firefox";
