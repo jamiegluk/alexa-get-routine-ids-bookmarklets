@@ -1,6 +1,6 @@
 {
   "name": "alexa-get-routine-ids-bookmarklets",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Browser bookmarklets for easily searching automationId values for routines from the Amazon Alexa API",
   "keywords": [
     "alexa",
