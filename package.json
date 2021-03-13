@@ -44,19 +44,22 @@
       "pre-commit": "run-s lint:fix build"
     }
   },
+  "resolutions": {
+    "node-forge": "^0.10.0"
+  },
   "devDependencies": {
-    "@types/node": "^14.14.2",
-    "cross-env": "^7.0.2",
+    "@types/node": "^14.14.34",
+    "cross-env": "^7.0.3",
     "escape-goat": "^3.0.0",
     "gh-pages": "^3.1.0",
     "husky": "^4.3.0",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.1.2",
-    "prettier-plugin-packagejson": "^2.2.6",
+    "prettier": "^2.2.1",
+    "prettier-plugin-packagejson": "^2.2.10",
     "rimraf": "^3.0.2",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
   },
   "title": "Alexa Get-Routine-IDs Bookmarklets"
 }
