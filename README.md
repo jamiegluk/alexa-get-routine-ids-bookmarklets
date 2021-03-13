@@ -41,7 +41,7 @@ yarn deploy
 
 | Command            | Description                                                                                         |
 | ------------------ | --------------------------------------------------------------------------------------------------- |
-| `yarn build`       | Build app as dev to `/dist/` and serve @ `http://localhost:1234`                                    |
+| `yarn build`       | Build app as dev to `/dist/`                                                                        |
 | `yarn build:us`    | Builds `bookmarklet.ts` using Amazon US (.com) URL to `/.build/bookmarklet.us.js``                  |
 | `yarn build:uk`    | Builds `bookmarklet.ts` using Amazon UK (.co.uk) URL to `/.build/bookmarklet.uk.js`                 |
 | `yarn build:env`   | Delegate for above 2, runs parcel                                                                   |
